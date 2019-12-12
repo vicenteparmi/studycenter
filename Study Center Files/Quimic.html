@@ -1,0 +1,212 @@
+<!doctype= html> <!-- Página criada por Vicente Parmigiani em 4/03/2016 às 15h-->
+<html lang="pt">
+	<head>
+		<title>Química - Central de Estudos</title>
+		<link rel="icon" type="image/png" href="Quimic/icon.png" />
+		<link rel="stylesheet" type="text/css" href="Quimic/Quimic.css">
+		<meta charset="ISO-8859-1"> <!-- Para páginas em Português, Brasil. -->
+		<script src="Quimic/Quimic.js"></script>
+	</head>
+	<body>
+		<div id="sandwish_menu" class="SANDclose">
+			<iframe src="Menu.html" width='210px' height='110%' style="border:none;"></iframe>
+		</div>
+		<div id="darkBackground" onclick="SANDmenu(1)" class="hide"></div>
+		<header>
+			<p style="margin-top:-15px;">
+				<img src="Media/Material Icons/ic_menu_white_36dp_2x.png"/ width="24px" height="24px" style="vertical-align: middle;padding: 10px;cursor:pointer;-webkit-filter:brightness(0%);" onclick="SANDmenu(0)">
+				<text style="margin-top: 1px;vertical-align: middle;">Química</text>
+			</p>
+		</header>
+		<div id="body">
+			<text class="chapT">Separação Eletrônica e Informações</text>
+			<p>Aqui você poderá fazer a separação eletrônica de todos os elementos da tabela periódica e ver informações como o nome, símbolo e números quânticos.</p>
+			<br>
+			<div class="block">
+				<p class="chapT">Pesquisar elemento</p>
+				<text>Você pode pesquisar por nº atômico ou símbolo.</text>
+				<p>Número atômico: <input type="number" min="1" max="200" onkeyup="sepMax()" id="sepMax" value="1" title="Número atômico do elemento necessário. Pode ser o nº de prótons(Z)."/></p>
+				<p>Símbolo:
+				<select style="width: 80px;" id="ELElist">
+				<option>H</option><option>He</option><option>Li</option><option>Be</option><option>B</option><option>C</option><option>N</option><option>O</option><option>F</option><option>Ne</option><option>Na</option><option>Mg</option><option>Al</option><option>Si</option><option>P</option><option>S</option><option>Cl</option><option>Ar</option><option>K</option><option>Ca</option><option>Sc</option><option>Ti</option><option>V</option><option>Cr</option><option>Mn</option><option>Fe</option><option>Co</option><option>Ni</option><option>Cu</option><option>Zn</option><option>Ga</option><option>Ge</option><option>As</option><option>Se</option><option>Br</option><option>Kr</option><option>Rb</option><option>Sr</option><option>Y</option><option>Zr</option><option>Nb</option><option>Mo</option><option>Tc</option><option>Ru</option><option>Rh</option><option>Pd</option><option>Ag</option><option>Cd</option><option>In</option><option>Sn</option><option>Sb</option><option>Te</option><option>I</option><option>Xe</option><option>Cs</option><option>Ba</option><option>La</option><option>Ce</option><option>Pr</option><option>Nd</option><option>Pm</option><option>Sm</option><option>Eu</option><option>Gd</option><option>Tb</option><option>Dy</option><option>Ho</option><option>Er</option><option>Tm</option><option>Yb</option><option>Lu</option>
+				</select>
+				</p>
+				<!--p>Mais ou Menos elétrons: <input type="number" min="-99" max="99" onkeyup="sepMax()" id="sepAnion"/></p-->
+				<p class="chapT" style="margin-bottom: 30px; font-size: 20pt;">Modo de pesquisa:</p>
+				<input id="sepMode" type="radio" value="1" name="smode" checked>Número atômico</input><br/>
+				<input style="margin-left: -5.5%" type="radio" value="2" name="smode">Símbolo</input>
+				<br/>
+				<br/>
+				<a href="#session1"><input type="button" value="Separar" onclick="separate()"/></a>
+				<br/>
+				<p class="chapT" id="session1" style="font-size: 18pt;margin-bottom:10px;">Separações</p>
+				<br/>
+				<table align="center" style="width: 250px; display: inline">
+					<tr>
+						<th>Camadas</th>
+						<th>Nº de Elétrons</th>
+					</tr>
+					<tr>
+						<td>K</td>
+						<td id="layer1">0</td>
+					</tr>
+					<tr>
+						<td>L</td>
+						<td id="layer2">0</td>
+					</tr>
+					<tr>
+						<td>M</td>
+						<td id="layer3">0</td>
+					</tr>
+					<tr>
+						<td>N</td>
+						<td id="layer4">0</td>
+					</tr>
+					<tr>
+						<td>O</td>
+						<td id="layer5">0</td>
+					</tr>
+					<tr>
+						<td>P</td>
+						<td id="layer6">0</td>
+					</tr>
+					<tr>
+						<td>Q</td>
+						<td id="layer7">0</td>
+					</tr>
+				</table>
+				<table align="center" style="width: 250px; display: inline">
+					<tr>
+						<th>Níveis</th>
+						<th>Subníveis</th>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td id="sub1" style="text-align: left">-</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td id="sub2" style="text-align: left">-</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td id="sub3" style="text-align: left">-</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td id="sub4" style="text-align: left">-</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td id="sub5" style="text-align: left">-</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td id="sub6" style="text-align: left">-</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td id="sub7" style="text-align: left">-</td>
+					</tr>
+				</table>
+				<table align="center" style="width: 200px; display: inline">
+					<tr>
+						<th>Ordem de Energia</th>
+					</tr>
+					<tr>
+						<td id="energy" style="height: 180px;text-align: left;">-</td>
+					</tr>
+				</table>
+				<br>
+				<br>
+				<table align="center" style="width: 700px;border-bottom: none;">
+					<tr>
+						<th>Informações sobre este átomo</th>
+					</tr>
+					<tr>
+						<td><hr/></td>
+					<tr>
+				</table>
+				<table align="center" style="width: 700px;border-top: none;">
+					<tr>
+						<th>Informação</th>
+						<th>Valor</th>
+					</tr>
+					<tr>
+						<td>Nome do átomo</td>
+						<td><span id="Aname">-</span></td>
+					</tr>
+					<tr>
+						<td>Símbolo</td>
+						<td><span id="Asimbol" style="font-family: 'Tempus Sans ITC Regular',serif;">-</span></td>
+					</tr>
+					<tr>
+						<td>Classificação</td>
+						<td><span id="Aclass">-</span></td>
+					</tr>
+					<tr>
+						<td>Estado físico</td>
+						<td><span id="Astate">-</span></td>
+					</tr>
+					<tr>
+						<td>Série</td>
+						<td><span id="Aserie">-</span></td>
+					</tr>
+					<tr>
+						<td>Número de Prótons*</td>
+						<td><span id="Apro">-</span></td>
+					</tr>
+					<tr>
+						<td>Número de Elétrons*</td>
+						<td><span id="Aele">-</span></td>
+					</tr>
+					<tr>
+						<th><hr></th>
+						<th><hr></th>
+					</tr>
+					<tr>
+						<th>Numeros quânticos</th>
+						<th>Valor</th>
+					</tr>
+					<tr>
+						<td>Principal</td>
+						<td><span id="QUAp">-</span></td>
+					</tr>
+					<tr>
+						<td>Secundário</td>
+						<td><span id="QUAs">-</span></td>
+					</tr>
+					<tr>
+						<td>Magnético</td>
+						<td><span id="QUAm">-</span>m</td>
+					</tr>
+					<tr>
+						<td>Spin</td>
+						<td><span id="QUAsp">-</span>s <input type="checkbox" onchange="spin()" id="QUAspin" title="Modo inverso"></td>
+					</tr>
+				</table>
+				<table align="center" style="width: 700px;font-size: 5pt;">
+					<tr>
+						<td>Observação: Estados físicos medidos a 0ºC e 1atm.</td>
+					</tr>
+					<tr>
+						<td>© 2013 IUPAC, the International Union of Pure and Applied Chemistry (Adaptado)<br/>Tabela disponível em:  <a href="http://www.iupac.org/reports/periodic_table/">www.iupac.org/reports/periodic_table/</a></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
+						<td>* no seu átomo neutro.</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<br/>
+				<iframe src="http://www.iupac.org/reports/periodic_table/" width="92%" height="85%" align="center" style="border-style: none;box-shadow: 0px 3px 10px 3px rgba(0,0,0,0.3)"></iframe>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+		</div>
+	</body>
+</html>

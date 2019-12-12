@@ -1,0 +1,96 @@
+<!doctype= html> <!-- Página criada por Vicente Parmigiani em 27/02/2016 às 16h-->
+<html lang="pt">
+	<head>
+		<title>Matemática - Central de Estudos</title>
+		<link rel="icon" type="image/png" href="Math/icon.png" />
+		<link rel="stylesheet" type="text/css" href="Math/Math.css">
+		<meta charset="ISO-8859-1"> <!-- Para páginas em Português, Brasil. -->
+		<script src="Math/Math.js"></script>
+	</head>
+	<body onmousemove="load()">
+		<div id="sandwish_menu" class="SANDclose">
+			<iframe src="Menu.html" width='210px' height='110%' style="border:none;"></iframe>
+		</div>
+		<div id="darkBackground" onclick="SANDmenu(1)" class="hide"></div>
+		<header>
+			<p style="margin-top:-15px;">
+				<img src="Media/Material Icons/ic_menu_white_36dp_2x.png"/ width="24px" height="24px" style="vertical-align: middle;padding: 10px;cursor:pointer;-webkit-filter:brightness(0%)" onclick="SANDmenu(0)">
+				<text style="margin-top: 1px;vertical-align: middle;">Matemática</text>
+			</p>
+		</header>
+		<div id="body">
+			<text class="chapT">Calculadora</text>
+			<p>Calculadora com as principais funções necessárias.</p>
+				<div id="Calculator">
+					<div class="display">
+						<input id="display" class="display" type="text" onkeydown="calculator('error')" placeholder="Clique nos botões abaixo para inserir o cálculo aqui."></input>
+					</div>
+					<div id="keyboard" align="center">
+						<input type="button" value="7" onclick="calculator(7)" class="kbu">
+						<input type="button" value="8" onclick="calculator(8)" class="kbu">
+						<input type="button" value="9" onclick="calculator(9)" class="kbu">
+						<input type="button" value="+" onclick="calculator('+')" class="kbu">
+						<input type="button" value="x²" onclick="calculator('x2')" class="kbu">
+						<input type="button" value="&#120529" onclick="calculator('pi')" class="kbu" id="pi">
+						<input type="button" value="(" onclick="calculator('openB')" class="kbu">
+						<br>
+						<input type="button" value="4" onclick="calculator(4)" class="kbu">
+						<input type="button" value="5" onclick="calculator(5)" class="kbu">
+						<input type="button" value="6" onclick="calculator(6)" class="kbu">
+						<input type="button" value="-" onclick="calculator('-')" class="kbu">
+						<input type="button" value="&#8730²" onclick="calculator('sqrt')" class="kbu">
+						<input type="button" value="&#120651" onclick="calculator('phi')" class="kbu" id="phi">
+						<input type="button" value=")" onclick="calculator('closeB')" class="kbu">
+						<br>
+						<input type="button" value="1" onclick="calculator(1)" class="kbu">
+						<input type="button" value="2" onclick="calculator(2)" class="kbu">
+						<input type="button" value="3" onclick="calculator(3)" class="kbu">
+						<input type="button" value="×" onclick="calculator('x')" class="kbu">
+						<input type="button" value="&#119942" onclick="calculator('e')" class="kbu" id="e">
+						<input type="button" value="C" onclick="calculator('C')" class="kbu" style="width: 116px;">
+						<br>
+						<input type="button" value="0" onclick="calculator(0)" class="kbu" style="margin-left:-1px;">
+						<input type="button" value="00" onclick="calculator('00')" class="kbu">
+						<input type="button" value="." onclick="calculator('.')" class="kbu">
+						<input type="button" value="÷" onclick="calculator('/')" class="kbu">
+						<input type="button" value="%" onclick="calculator('%')" class="kbu">
+						<input type="button" value="=" onclick="calculator('=')" class="kbu" style="width: 116px;">
+					</div>
+					<br><center>
+					<text class="small">Aviso: Se você for escrever, use apenas números e operações simples como +, -, ×(*) e ÷(/). Usar o &#120529 ou &#120651, por exemplo, irá resultar em um erro de sintaxe. </text>
+					</center>
+					<input type="text" id="BEHINDdisplay"/>
+				</div>
+			<!--text class="chapT">Conversão de Unidades</text>
+			<p style="margin-right:100px;">Aqui você pode converter unidades para utilizá-las na forma correta na hora de fazer cálculos com equações e pode também simular outras coisas.</p-->
+			<text class="chapT">Conjuntos numéricos</text>
+			<p>Faça operações com conjuntos numéricos.</p>
+			<div class="divBox" style="text-align: center;padding: 10px;">
+				<text>Modo: </text>
+				<select>
+					<option>Selecione...</option>
+					<option>2 conjuntos</option>
+					<option>3 conjuntos</option>
+					<option>4 conjuntos</option>
+				</select>
+				<hr style="border-color:#E0E0E0;border-style:dotted;"/>
+				<br/>
+				<div id="1C">
+					<p>Escolha a quantidade de conjuntos acima.</p>
+				</div>
+				<div id="2C">
+					<text>Conjunto "A": { A  </text>
+					<span id="elementOf"></span>
+					<text> </text>
+					<span id="conj1" onclick="setconj('1')"></span>
+				</div>
+				<div id="3C">
+				</div>
+				<div id="4C">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+   <!-- \u220A -->

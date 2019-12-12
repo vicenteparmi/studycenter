@@ -1,0 +1,242 @@
+<!doctype= html> <!-- Página criada por Vicente Parmigiani em 27/02/2016 às 16h-->
+<html lang="pt">
+	<head>
+		<title>Física - Central de Estudos</title>
+		<link rel="icon" type="image/png" href="Phisics/icon.png" />
+		<link rel="stylesheet" type="text/css" href="Phisics/Phisics.css">
+		<meta charset="ISO-8859-1"> <!-- Para páginas em Português, Brasil. -->
+		<script src="Phisics/Phisics.js"></script>
+	</head>
+	<body onload="setInterval('goUpB();',100)">
+		<div id="sandwish_menu" class="SANDclose">
+			<iframe src="Menu.html" width='210px' height='110%' style="border:none;"></iframe>
+		</div>
+		<div id="darkBackground" onclick="SANDmenu(1)" class="hide"></div>
+		<header>
+			<p style="margin-top:-15px;">
+				<img src="Media/Material Icons/ic_menu_white_36dp_2x.png"/ width="24px" height="24px" style="vertical-align: middle;padding: 10px;cursor:pointer" onclick="SANDmenu(0)">
+				<text style="margin-top: 1px;vertical-align: middle;">Física</text>
+			</p>
+		</header>
+		<input type="button" class="TopH" id="go2Top" value="Voltar para o topo" onclick="scrollToTop()"></input>
+		<div id="body">
+			<!-- <text class="chapT">Índice</text>
+			<p>Encontre o que você quer.</p>
+			<div>
+				<ul>
+					<li><a href="#p1">Cálculo de fórmulas</a></li>
+					<li><a href="#p2">Conversão de unidades</a></li>
+					<li><a href="#p3">Informações</a></li>
+					<li><a href="#p4">Movimentos</a></li>
+				</ul>
+			</div>
+			<br/>
+			<hr style="width:92%; margin-left: 0%;margin-bottom: 100px;" id="p1"/> -->
+			<text class="chapT">Cálculo de Fórmulas</text>
+			<p>Calculadora das principais fórmulas utilizadas na física.</p>
+			<div class="forBOX">
+				<center>
+				<div class="forBOXTitle">
+					<input type="button" class="boxB BoxB0" onclick="forBox(0,0)" value="Distância"/>
+					<input type="button" class="boxB BoxB0" onclick="forBox(1,0)" value="Velocidade"/>
+					<input type="button" class="boxB BoxB0" onclick="forBox(2,0)" value="Força"/>
+				</div>
+				<div id="selectorINDICATOR0"></div>
+				<div id="innerforBox">
+					<p id="forBoxT" class="chapT" style="font-size: 20px; margin-bottom: 0px;">Velocidade Média</p>
+					<p>Fórmulas:</p>
+					<i><p id="formulas"><b>Vm = d / t</b>    ||    <b>d = Vm . t</b>    ||    <b>t = Vm / d</b></p></i>
+					<p>Cálculo:</p>
+					<span id="inputFunction">
+						<input type="number" placeholder="Vm" id="FVm"/>
+						<text> = </text>
+						<input type="number" placeholder="D(m)" id="FD"/>
+						<text> / </text>
+						<input type="number" placeholder="T(s)" id="FT"/>
+						<input type="checkbox" style="visibility:hidden" title='Incluir aceleração (M.R.U.V.)' id="aceleration"/>
+					</span>
+					<p class="small">Aviso: deixe em branco para definir uma incógnita.</p>
+					<input type="button" value="Calcular" onclick="solveFunction()"></input>
+					<input type="button" value="Limpar" onclick="clearFunction()"/>
+				</div>
+				</center>
+			</div>
+			<hr style="width:92%; margin-left: 0%;margin-bottom: 100px;" id="p2"/>
+			<text class="chapT">Conversão de Unidades</text>
+			<p style="margin-right:100px;">Aqui você pode converter unidades para utilizá-las na forma correta na hora de fazer cálculos com equações e pode também simular outras coisas.</p>
+			<div class="forBOX" style="height: 600px;"><center>
+				<div class="forBOXTitle">
+					<input type="button" class="boxB boxB1" onclick="forBox(0,1)" value="Massa"/>
+					<input type="button" class="boxB boxB1" onclick="forBox(1,1)" value="Conversor"/>
+					<input type="button" class="boxB boxB1" onclick="forBox(2,1)" value="?"/>
+				</div>
+				<div id="selectorINDICATOR1"></div>
+				<div id="innerforBox">
+					<p id="forBoxT1" class="chapT" style="font-size: 20px; margin-bottom: 0px;">Conversor de Medidas</p>
+					<div id="content0">
+						<table>
+							<tr>
+								<th>Km/h</th>
+								<th>m/s</th>
+							</tr>
+							<tr>
+								<td><div align="center"><input type="number" id="CON0" onkeyup="convert(0)"/></div></td>
+								<td><div align="center"><input type="number" id="CON1" onkeyup="convert(1)"/></div></td>
+							</tr>
+							<tr>
+								<th>Hora em h/min</th>
+								<th>Hora decimal</th>
+							</tr>
+							<tr>
+								<td><div align="center"><input type="number" id="CON2" onkeyup="convert(2)"/><text class="small">h</text><input type="number" id="CON3" onkeyup="convert(3)"/><text class="small">min</text></div></td>
+								<td><div align="center"><input type="number" id="CON4" onkeyup="convert(4)"/>,<input type="number" id="CON5" onkeyup="convert(5)"/><text class="small">h</text></div></td>
+							</tr>
+							<tr>
+								<th>ºC</th>
+								<th>ºF</th>
+							</tr>
+							<tr>
+								<td><div align="center"><input type="number" id="CON6" onkeyup="convert(6)"/></div></td>
+								<td><div align="center"><input type="number" id="CON7" onkeyup="convert(7)"/></div></td>
+							</tr>
+						</table>
+					</div>
+					<div id="content1" class="CONTENTh">
+						<text>Sua massa: </text><input type="number" id="MASSYour" placeholder="Insira sua massa" style="width: 150px;"/><text> Kg.</text>
+						<input type="button" value="Calcular" onclick="MASS()"/>
+						<table style="margin-top: 50px;width: 500px;">
+							<tr>
+								<th>Planeta/Estrela</th>
+								<th>Peso no local</th>
+								<th>Peso em relação à Terra</th>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Sol</td>
+								<td><span id="MASS0">-</span></td>
+								<td><span id="MASS00">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Mercúrio</td>
+								<td><span id="MASS1">-</span></td>
+								<td><span id="MASS11">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Vênus</td>
+								<td><span id="MASS2">-</span></td>
+								<td><span id="MASS22">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Terra</td>
+								<td><span id="MASS3">-</span></td>
+								<td><span id="MASS33">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Marte</td>
+								<td><span id="MASS4">-</span></td>
+								<td><span id="MASS44">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Júpiter</td>
+								<td><span id="MASS5">-</span></td>
+								<td><span id="MASS55">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Saturno</td>
+								<td><span id="MASS6">-</span></td>
+								<td><span id="MASS66">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Urano</td>
+								<td><span id="MASS7">-</span></td>
+								<td><span id="MASS77">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Netuno</td>
+								<td><span id="MASS8">-</span></td>
+								<td><span id="MASS88">-</span></td>
+							</tr>
+							<tr>
+								<td style="border-right-style: solid; border-right-width: 1px;">Lua</td>
+								<td><span id="MASS9">-</span></td>
+								<td><span id="MASS99">-</span></td>
+							</tr>
+						</table>
+						<p class="small">Os gigantes gasosos (Júpiter, Saturno, Urano e Netuno) não tem uma superfície sólida observável. Nesse caso foi considerado para o cálculo a distância ao centro do planeta onde a pressão atmosférica é de 1 atm, igual à pressão atmosférica ao nível do mar na Terra</p>
+					</div>
+				</div>
+			</div></center>
+			<hr style="width:92%; margin-left: 0%;margin-bottom: 100px;" id="p3"/>
+			<text class="chapT">Informações</text>
+			<p>As principais informações, como a velocidade da luz e do som, em um só lugar.</p>
+			<ol style="font-size: 12pt;">
+				<li>Velocidade da luz:</li>
+				<li>Velocidade do Som:</li>
+				<li>Distância entre a Terra e o Sol:</li>
+				<li>Ordem de classificação no Universo: Terra, Sistema estrelar, Galáxia...</li>
+				<li>Gravidade da Terra: 9,81 m/s²</li>
+				<li>Tempo que a luz do Sol demora para chegar até a Terra: 8,4 min (8min e 24seg)</li>
+				<li>Tempo para a luz do Sol chegar até Netuno:</li>
+				<li>Nome da galáxia mais próxima: Andrômeda</li>
+			</ol>
+			<hr style="width:92%; margin-left: 0%;margin-bottom: 100px;" id="p4"/>
+			<text class="chapT">Movimentos</text>
+			<p>Informações sobre os movimentos M.R.U.(Movimento retilíneo uniforme) e M.R.U.V. (Movimento retilíneo uniformemente variado).</p>
+			<table id="forBOX" style="width: 92%;margin-bottom: 100px">
+				<tr>
+					<th>M.R.U.</th>
+					<th>M.R.U.V.</th>
+				</tr>
+				<tr>
+				</tr>
+				<tr>
+					<th style="border: 0 none;">Fórmulas</th>
+					<th style="border: 0 none;">Fórmulas</th>
+				</tr>
+				<tr>
+					<td style="border: 0 none;">Vm = D / T</td>
+					<td style="border: 0 none;">Vm =  (Sf - S0)/(T0 - Tf)</td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;">Sf = S0 + V.t</td>
+					<td style="border: 0 none;">Sf = S0 + V.t + ((a.t²)/2)</td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;"></td>
+					<td style="border: 0 none;">Vf² = V0² + 2.a.(Sf-S0)</td>
+				</tr>
+				<tr>
+					<td>a = 0</td>
+					<td>a = (V0 - Vf)/(T0 - Tf)</td>
+				</tr>
+				<tr>
+					<th style="border: 0 none;">Gráficos</th>
+					<th style="border: 0 none;">Gráficos</th>
+				</tr>
+				<tr>
+					<td style="border: 0 none;">Velocidade x Tempo (V.t)</td>
+					<td style="border: 0 none;">Velocidade x Tempo (V.t)</td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;"><img src="Phisics/Graphics/VxT-MRU.png"/></td>
+					<td style="border: 0 none;"><img src="Phisics/Graphics/VxT-MRUV.png"/></td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;">Posição x Tempo (S.t)</td>
+					<td style="border: 0 none;">Posição x Tempo (S.t)</td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;"><img src="Phisics/Graphics/SxT-MRU.png"/></td>
+					<td style="border: 0 none;"><img src="Phisics/Graphics/SxT-MRUV.png"/></td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;">Aceleração x Tempo (a.t)</td>
+					<td style="border: 0 none;">Aceleracão x Tempo (a.t)</td>
+				</tr>
+				<tr>
+					<td style="border: 0 none;"><img src="Phisics/Graphics/AxT-MRU.png"/></td>
+					<td style="border: 0 none;"><img src="Phisics/Graphics/VxT-MRU.png"/></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype= html> <!-- Página criada por Vicente Parmigiani em 4/03/2016 às 15h-->
+<html lang="pt">
+	<head>
+		<title>Central de Estudos</title>
+		<link rel="icon" type="image/png" href="Home/icon.png" />
+		<link rel="stylesheet" type="text/css" href="Home/Home.css">
+		<meta charset="ISO-8859-1"> <!-- Para páginas em Português, Brasil. -->
+		<script src="Home/Home.js"></script>
+	</head>
+	<body onscroll="Down()">
+		<div id='sandwish_menu' class="SANDclose">
+			<iframe src="Menu.html" width='210px' height='110%' style="border:none;"></iframe>
+		</div>
+		<div id="darkBackground" onclick="SANDmenu(1)" class="hide"></div>
+		<div id="header">
+			<p style="margin-top:-15px;">
+				<img src="Media/Material Icons/ic_menu_white_36dp_2x.png"/ width="24px" height="24px" style="vertical-align: middle;padding: 10px;cursor:pointer;" onclick="SANDmenu(0)">
+				<text style="margin-top: 1px;vertical-align: middle;">Início - Central de Estudos</text>
+			</p>
+		</div>
+		<video style="-webkit-filter:brightness(70%)" class="background-video" autoplay loop src="Media\background-home.mp4">
+		</video>
+		<div id="pre-body" onmouseover="Up()">
+			<text id="mainT" class="pre-body-title">Central de Estudos</text>
+			<br>
+			<text class="pre-body-subtitle">O local onde você irá aprender e será auxiliado nos estudos.</text>
+		</div>
+		<div id="body">
+			<text class="chapT">Páginas</text>
+			<p>Todas as matérias do site.</p>
+			<div id="applist">
+				<a href="Bio.html"><div class="appcard" style="background-color:#4CAF50">Biologia</div></a>
+				<a href="English.html"><div class="appcard" style="background-color:#FF5722">Inglês</div></a>
+				<a href="Esp.html"><div class="appcard" style="background-color:#FFEB3B">Espanhol</div></a>
+				<a href="Fil.html"><div class="appcard" style="background-color:#795548">Filosofia</div></a>
+				<a href="Phisics.html"><div class="appcard" style="background-color:#009688">Física</div></a>
+				<a href="Geo.html"><div class="appcard" style="background-color:#2196F3">Geografia</div></a>
+				<a href="Art.html"><div class="appcard" style="background-color:#9C27B0">Arte</div></a>
+				<a href="Lit.html"><div class="appcard" style="background-color:#E91E63">Literatura</div></a>
+				<a href="Math.html"><div class="appcard" style="background-color:#FFC107">Matemática</div></a>
+				<a href="TXT.html"><div class="appcard" style="background-color:#3F51B5">Texto</div></a>
+				<a href="Quimic.html"><div class="appcard" style="background-color:#8BC34A">Química</div></a>
+				<a href="Sociologia.html"><div class="appcard" style="background-color:#9E9E9E">Sociologia</div></a>
+			</div>
+			<br><br>
+			<hr style="width: 90%">
+			<br><br>
+			<text class="chapT">Links</text>
+			<p>Links de outros sites úteis.</p>
+			<ul>
+				<li><a class="normal" href="http://www.saojoseerechim.com.br">São José Erechim</a></li>
+				<li><a class="normal" href="https://app.mystudylife.com/dashboard">My study Life</a></li>
+				<li><a class="normal" href="https://www.sprweb.com.br/">Super Pro Web</a></li>
+				<li><a class="normal" href="http://portaleducacional.franciscanasmma.com.br">Portal Educacional<a></li>
+			</ul>
+			<a class="normal" href="#pre-body" onclick="scrollToTop();return false">Voltar para o topo ^</a>
+		</div>
+	</body>
+</html>
